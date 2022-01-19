@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+    <style>
+        body {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        #counter {
+            background-color: greenyellow;
+            display: flex;
+            border-style: groove;
+            border: 1.5px solid black;
+        }
+        
+        #counter > button {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            border: none;
+            background-color: aqua;
+            margin: 5px;
+            font-size: x-large;
+            font-family:cursive;
+            font-weight: 800;
+        }
+
+        #counter > div {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: x-large;
+            font-family:cursive;
+            font-weight: 800;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #bar {
+            background-color: red;
+            height: 30px;
+        }
+    </style>
+    
+    <div id="counter">
+        <button onclick="increase()">+</button>
+        <div>0</div>
+        <button onclick="decrease()">-</button>
+    </div>
+    <div id="bar"></div>
+    <script>
+        var num = 0;
+        function increase(){
+            num = num + 1;
+            document.querySelector("#counter > div").innerText = num;
+            document.querySelector("#bar").style.width = (num*10) + "px";
+        }
+        
+        function decrease (){
+            num = num -1;
+            document.querySelector("#counter > div").innerText = num;
+            document.querySelector("#bar").style.width = (num*10 + "px");
+         
+        }
+        
+
+    </script>
+</body>
+</html>
